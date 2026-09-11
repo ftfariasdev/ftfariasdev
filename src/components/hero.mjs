@@ -1,5 +1,6 @@
 import { round } from "../lib/format.mjs";
 import { MATRIX_COLUMNS, MATRIX_ROWS, matrixGlyph } from "../lib/matrix-font.mjs";
+import { randomSequence } from "../lib/random.mjs";
 import { svgDocument } from "../lib/svg.mjs";
 
 const WIDTH = 830;
@@ -24,11 +25,6 @@ const INTRO = {
   pulse: { delay: 7, duration: 1 },
   ambient: 8,
 };
-
-function randomSequence(seed) {
-  let state = seed;
-  return () => (state = (state * 16807) % 2147483647) / 2147483647;
-}
 
 // One photovoltaic module per letter, separated by exactly one empty column.
 function layoutArray(text) {
