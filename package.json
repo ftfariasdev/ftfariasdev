@@ -1,0 +1,24 @@
+{
+  "name": "ftfariasdev-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Code-generated GitHub profile README for ftfariasdev: token-driven animated SVGs and a daily solar contribution farm.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "preview": "node scripts/preview.mjs",
+    "farm": "node scripts/solar-farm.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@fontsource/b612": "5.3.0",
+    "@fontsource/b612-mono": "5.3.0",
+    "opentype.js": "2.0.0",
+    "playwright-core": "1.63.0",
+    "svgo": "4.1.0"
+  }
+}
