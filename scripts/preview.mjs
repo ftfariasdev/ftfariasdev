@@ -35,10 +35,11 @@ try {
     for (const { suffix, width, reducedMotion, frames } of variants) {
       const page = await browser.newPage({ viewport: { width: width + 32, height: 1200 } });
       await page.emulateMedia({ reducedMotion, colorScheme: theme });
+      // A data attribute, not an id: ids inside the inlined SVG share the page's namespace.
       await page.setContent(
         `<body style="margin:0;padding:16px;background:${GITHUB_BACKGROUND[theme]}">` +
-          `<style>#frame svg{display:block;width:100%;height:auto}</style>` +
-          `<div id="frame" style="width:${width}px">${svg}</div></body>`,
+          `<style>[data-preview] svg{display:block;width:100%;height:auto}</style>` +
+          `<div data-preview style="width:${width}px">${svg}</div></body>`,
       );
 
       for (const seconds of frames) {
@@ -49,7 +50,7 @@ try {
           }
         }, seconds * 1000);
         const path = fileURLToPath(new URL(`${name}${suffix}-${seconds}s.png`, outDir));
-        await page.locator("#frame").screenshot({ path });
+        await page.locator("[data-preview]").screenshot({ path });
       }
       await page.close();
     }
