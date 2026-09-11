@@ -1,3 +1,4 @@
+import * as connect from "./connect.mjs";
 import * as divider from "./divider.mjs";
 import * as hero from "./hero.mjs";
 import * as projects from "./projects.mjs";
@@ -5,4 +6,4 @@ import * as stack from "./stack.mjs";
 import * as terminal from "./terminal.mjs";
 
 // Each component exports render(project) and returns [{ file, svg }] for every theme.
-export const components = [hero, divider, terminal, stack, projects];
+export const components = [hero, divider, terminal, stack, projects, connect];
