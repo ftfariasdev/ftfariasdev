@@ -15,6 +15,20 @@ function loadFont(file) {
 
 const byId = ([a], [b]) => (a < b ? -1 : a > b ? 1 : 0);
 
+// opentype.js 2.0.0 writes NaN from toPathData() for some B612 glyphs, and browsers stop drawing
+// a path at the first NaN. The glyph commands themselves are correct, so they are serialized here.
+function pathData(commands) {
+  return commands
+    .map(({ type, x, y, x1, y1, x2, y2 }) => {
+      if (type === "M" || type === "L") return `${type}${round(x)} ${round(y)}`;
+      if (type === "Q") return `Q${round(x1)} ${round(y1)} ${round(x)} ${round(y)}`;
+      if (type === "C") return `C${round(x1)} ${round(y1)} ${round(x2)} ${round(y2)} ${round(x)} ${round(y)}`;
+      if (type === "Z") return "Z";
+      throw new Error(`Unsupported path command "${type}"`);
+    })
+    .join("");
+}
+
 // SVGs shown through <img> cannot load fonts, so text becomes glyph paths.
 // Each glyph is defined once per face and size, then placed with <use>.
 export class Typesetter {
@@ -70,7 +84,7 @@ export class Typesetter {
 
   #define(face, size, glyph) {
     const id = `g-${face}-${size}-${glyph.index}`;
-    if (!this.#glyphs.has(id)) this.#glyphs.set(id, glyph.getPath(0, 0, size).toPathData(2));
+    if (!this.#glyphs.has(id)) this.#glyphs.set(id, pathData(glyph.getPath(0, 0, size).commands));
     return id;
   }
 
