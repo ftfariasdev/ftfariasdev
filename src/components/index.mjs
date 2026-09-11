@@ -4,6 +4,7 @@ import * as hero from "./hero.mjs";
 import * as projects from "./projects.mjs";
 import * as stack from "./stack.mjs";
 import * as terminal from "./terminal.mjs";
+import * as vuMeter from "./vu-meter.mjs";
 
 // Each component exports render(project) and returns [{ file, svg }] for every theme.
-export const components = [hero, divider, terminal, stack, projects, connect];
+export const components = [hero, divider, terminal, stack, projects, connect, vuMeter];
