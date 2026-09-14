@@ -20,12 +20,12 @@ I hold a technical degree in web development from ETEC and I'm working on my bac
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg"><img alt="My stack drawn as a single-line diagram" src="assets/stack-light.svg" width="100%"></picture></p>
 
-**Languages:** C#, JavaScript, SQL  
+**Languages:** C#, JavaScript, SQL, Elixir, Python  
 **Front-end:** AngularJS, HTML, CSS, Bootstrap  
-**Back-end:** .NET  
-**Database:** SQL Server  
-**Tools:** Git  
-<sub>Also shipped with Node.js, Express, Prisma, PostgreSQL and Docker on SAGA.</sub>
+**Back-end:** .NET, Node.js, Express, Prisma  
+**Database:** SQL Server, PostgreSQL  
+**Tools:** Git, Docker  
+<sub>C#, .NET, SQL Server and AngularJS are my day to day at Softwrench; the rest comes from SAGA, college and side projects.</sub>
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-3-dark.svg"><img alt="" src="assets/divider-3-light.svg" width="100%"></picture></p>
 

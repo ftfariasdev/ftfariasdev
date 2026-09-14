@@ -39,17 +39,13 @@
   },
   "stack": {
     "layers": [
-      { "name": "Languages", "items": ["C#", "JavaScript", "SQL"] },
+      { "name": "Languages", "items": ["C#", "JavaScript", "SQL", "Elixir", "Python"] },
       { "name": "Front-end", "items": ["AngularJS", "HTML", "CSS", "Bootstrap"] },
-      { "name": "Back-end", "items": [".NET"] },
-      { "name": "Database", "items": ["SQL Server"] },
-      { "name": "Tools", "items": ["Git"] }
+      { "name": "Back-end", "items": [".NET", "Node.js", "Express", "Prisma"] },
+      { "name": "Database", "items": ["SQL Server", "PostgreSQL"] },
+      { "name": "Tools", "items": ["Git", "Docker"] }
     ],
-    "alsoShipped": {
-      "label": "Also shipped with",
-      "items": ["Node.js", "Express", "Prisma", "PostgreSQL", "Docker"],
-      "source": "SAGA"
-    }
+    "note": "C#, .NET, SQL Server and AngularJS are my day to day at Softwrench; the rest comes from SAGA, college and side projects."
   },
   "projects": [
     {

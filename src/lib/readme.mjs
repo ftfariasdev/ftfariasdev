@@ -12,9 +12,6 @@ const centered = (markup) => `<p align="center">${markup}</p>`;
 // Decorative dividers carry an empty alt so screen readers skip them.
 const divider = (index) => centered(picture(`divider-${index}`, "", 'width="100%"'));
 
-const sentenceList = (items) =>
-  items.length < 2 ? items.join("") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`;
-
 function spotify(uid, tokens) {
   const common = `uid=${uid}&cover_image=true&theme=spotify-embed&show_offline=true&interchange=false&profanity=false`;
   const dark = `${SPOTIFY}?${common}&mode=dark&background_color=${tokens.themes.dark.sky.slice(1)}&bar_color=${tokens.themes.dark.lit.slice(1)}&bar_color_cover=false`;
@@ -26,7 +23,7 @@ function spotify(uid, tokens) {
 }
 
 function projectGrid(projects) {
-  const card = ({ slug, name, url, alt }) => `<a href="${url}">${picture(`project-${slug}`, alt, 'width="49%"')}</a>`;
+  const card = ({ slug, url, alt }) => `<a href="${url}">${picture(`project-${slug}`, alt, 'width="49%"')}</a>`;
   const rows = [];
   for (let index = 0; index < projects.length; index += 2) {
     rows.push(centered(projects.slice(index, index + 2).map(card).join(" ")));
@@ -45,7 +42,7 @@ export function renderReadme(project) {
     stack: centered(picture("stack", "My stack drawn as a single-line diagram", 'width="100%"')),
     stackText: stack.layers
       .map(({ name, items }) => `**${name}:** ${items.join(", ")}`)
-      .concat(`<sub>${stack.alsoShipped.label} ${sentenceList(stack.alsoShipped.items)} on ${stack.alsoShipped.source}.</sub>`)
+      .concat(`<sub>${stack.note}</sub>`)
       .join("  \n"),
     projects: projectGrid(content.projects),
     projectList: content.projects
@@ -64,7 +61,7 @@ export function renderReadme(project) {
     vuMeter: centered(picture("vu-meter", "A level meter built from solar cells, bouncing on the beat")),
     easterEgg: `<details>\n<summary>${music.summary}</summary>\n\n${music.detail.replace("{bpm}", tokens.tempo.bpm)}\n\n</details>`,
     connect: centered(
-      content.connect.map(({ slug, label, url, alt }) => `<a href="${url}">${picture(`connect-${slug}`, alt, 'height="56"')}</a>`).join("&nbsp;&nbsp;"),
+      content.connect.map(({ slug, url, alt }) => `<a href="${url}">${picture(`connect-${slug}`, alt, 'height="56"')}</a>`).join("&nbsp;&nbsp;"),
     ),
     connectText: centered(
       `<sub>${content.connect.map(({ url, text }) => `<a href="${url}">${text}</a>`).join("&nbsp;&nbsp;&nbsp;")}</sub>`,

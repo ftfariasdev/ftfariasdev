@@ -97,6 +97,9 @@ function stackSvg(project, theme) {
     }
 
     const feederEnd = round(x - TAG.gap);
+    if (feederEnd > WIDTH - 24) {
+      throw new Error(`The ${layer.name} feeder runs ${round(feederEnd - WIDTH + 24)}px past the sheet; move an item to another layer in content.json`);
+    }
     wires.push(`M${BUS_X} ${y}H${LABEL_X - 8}M${round(labelEnd + 16)} ${y}H${feederEnd}`);
     breakers.push(`<rect x="${BREAKER_X - 5}" y="${y - 5}" width="10" height="10"/>`);
     // A panel-colored plate under the label lets the passing pulse slip beneath it instead of striking it through.
