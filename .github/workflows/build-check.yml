@@ -1,0 +1,37 @@
+name: Build check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+      - name: README and assets match the build
+        run: |
+          git diff --exit-code -- README.md assets
+          test -z "$(git status --porcelain -- README.md assets)" || {
+            echo "The build produced files that are not committed:"
+            git status --porcelain -- README.md assets
+            exit 1
+          }
+
+      # Size budget, no scripts, no external URLs, no private data.
+      - run: npm run check

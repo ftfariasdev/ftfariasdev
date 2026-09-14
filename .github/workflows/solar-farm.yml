@@ -1,0 +1,51 @@
+name: Solar contribution farm
+
+# The farm is published to the output branch, so main keeps a clean history.
+# GitHub disables scheduled workflows in public repositories after 60 days without activity.
+# There is no keepalive trick here on purpose: any push to main runs this too, and if the cron
+# is ever switched off, the last good farm stays up and `gh workflow enable solar-farm.yml`
+# turns it back on. See docs/HOW-IT-WORKS.md.
+on:
+  schedule:
+    - cron: "23 4 * * *" # 01:23 in São Paulo, off the top of the hour
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: solar-farm
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Render the farm from the contribution calendar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/solar-farm.mjs farm-output
+
+      - name: Publish to the output branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: farm-output
+        run: |
+          git init --quiet --initial-branch=output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit --quiet -m "chore(farm): render the solar contribution farm"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output

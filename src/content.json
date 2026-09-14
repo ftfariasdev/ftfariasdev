@@ -1,0 +1,124 @@
+{
+  "name": {
+    "full": "Felipe Teixeira Farias",
+    "handle": "ftfariasdev"
+  },
+  "role": "Junior Full Stack Developer",
+  "company": {
+    "name": "Softwrench",
+    "mark": {
+      "path": "M148 44 Q160 25 182 25 L313 25 Q335 25 347 43 L388 102 Q392 108 385 108 L246 108 Q232 108 224 119 L179 181 Q168 195 179 210 L224 272 Q232 283 246 283 L385 283 Q392 283 388 289 L348 347 Q335 365 313 365 L182 365 Q160 365 148 346 L65 215 Q52 195 65 175 Z",
+      "box": [52, 25, 340, 340]
+    }
+  },
+  "hero": {
+    "matrix": "FELIPE FARIAS",
+    "role": "Full Stack Developer at Softwrench",
+    "line": "Building O&M software for solar energy operations in the US",
+    "alt": "Felipe Teixeira Farias, Full Stack Developer at Softwrench, building O&M software for solar energy operations in the US"
+  },
+  "about": {
+    "paragraphs": [
+      "I'm Felipe Teixeira Farias, a Junior Full Stack Developer at Softwrench, working remotely with an international team.",
+      "I build web features for maintenance and asset management software (O&M and CMMS) used by solar energy operations in the US. Day to day that means C# and .NET with SQL Server on the back end, and AngularJS on the front end.",
+      "I hold a technical degree in web development from ETEC and I'm working on my bachelor's at UNASP. Music is a big part of who I am."
+    ],
+    "terminal": {
+      "prompt": "ftfariasdev@plant:~$",
+      "whoami": "ftfariasdev",
+      "file": "about.json",
+      "json": {
+        "role": "Junior Full Stack Developer",
+        "company": "Softwrench",
+        "domain": "O&M and asset management for solar energy",
+        "stack": ["C#", ".NET", "AngularJS", "SQL Server"],
+        "currently": "Bachelor's degree at UNASP",
+        "off_the_clock": "music"
+      }
+    }
+  },
+  "stack": {
+    "layers": [
+      { "name": "Languages", "items": ["C#", "JavaScript", "SQL", "Elixir", "Python"] },
+      { "name": "Front-end", "items": ["AngularJS", "HTML", "CSS", "Bootstrap"] },
+      { "name": "Back-end", "items": [".NET", "Node.js", "Express", "Prisma"] },
+      { "name": "Database", "items": ["SQL Server", "PostgreSQL"] },
+      { "name": "Tools", "items": ["Git", "Docker"] }
+    ],
+    "note": "C#, .NET, SQL Server and AngularJS are my day to day at Softwrench; the rest comes from SAGA, college and side projects."
+  },
+  "projects": [
+    {
+      "slug": "saga",
+      "name": "SAGA",
+      "url": "https://github.com/ftfariasdev/SAGA",
+      "lines": ["Academic management system", "UNASP capstone, team of four"],
+      "chips": ["Node.js", "Express", "Prisma", "PostgreSQL"],
+      "alt": "SAGA, an academic administration and management system built by a team of four as a capstone project at UNASP, with Node.js, Express, Prisma and PostgreSQL"
+    },
+    {
+      "slug": "elixir-bot",
+      "name": "ElixirBotForTelegram",
+      "url": "https://github.com/ftfariasdev/ElixirBotForTelegram",
+      "lines": ["Telegram bot that checks CPFs", "College group project, five people"],
+      "chips": ["Elixir", "Telegram API", "GitHub Actions"],
+      "alt": "ElixirBotForTelegram, a Telegram bot written in Elixir that validates Brazilian CPF numbers, built as a college group project of five"
+    },
+    {
+      "slug": "portfolio",
+      "name": "ftfariasdev.github.io",
+      "url": "https://github.com/ftfariasdev/ftfariasdev.github.io",
+      "lines": ["My portfolio site", "Vanilla HTML, CSS and JavaScript"],
+      "chips": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      "alt": "ftfariasdev.github.io, my portfolio site built with vanilla HTML, CSS and JavaScript on GitHub Pages"
+    },
+    {
+      "slug": "profile",
+      "name": "ftfariasdev",
+      "url": "https://github.com/ftfariasdev/ftfariasdev",
+      "lines": ["This profile, built by code", "SVGs rendered from design tokens"],
+      "chips": ["Node.js", "SVG", "GitHub Actions"],
+      "alt": "ftfariasdev, the repository behind this profile, where a Node.js build renders every animated SVG from design tokens and a GitHub Action refreshes the contribution farm"
+    }
+  ],
+  "music": {
+    "spotifyUid": "31ygxzb4eqcg4tqcipfxuxmf75qa",
+    "summary": "Why does everything move in time?",
+    "detail": "Every animation on this page runs at one tempo, {bpm} BPM, set in src/tokens.json. Press play above and see if your song agrees."
+  },
+  "connect": [
+    {
+      "slug": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/ftfariasdev",
+      "text": "linkedin.com/in/ftfariasdev",
+      "alt": "LinkedIn profile of Felipe Teixeira Farias"
+    },
+    {
+      "slug": "portfolio",
+      "label": "Portfolio",
+      "url": "https://ftfariasdev.github.io",
+      "text": "ftfariasdev.github.io",
+      "alt": "Portfolio website"
+    },
+    {
+      "slug": "email",
+      "label": "Email",
+      "url": "mailto:farias_felipe@outlook.com.br",
+      "text": "farias_felipe@outlook.com.br",
+      "alt": "Send an email to farias_felipe@outlook.com.br"
+    }
+  ],
+  "footer": {
+    "quote": ["Compare yourself to who you were yesterday,", "not to who someone else is today."],
+    "howItWorks": "How this profile is built"
+  },
+  "farm": {
+    "url": "https://raw.githubusercontent.com/ftfariasdev/ftfariasdev/output",
+    "alt": "Solar contribution farm: every cell is one day of the last year on GitHub, and the sun crossing the sky lights up the days with contributions",
+    "note": "Rendered every day by a GitHub Action from my contribution calendar.",
+    "countThreshold": 500,
+    "labelWithCount": "{count} contributions in the last year",
+    "labelWithoutCount": "Built from the last 12 months of contributions"
+  }
+}

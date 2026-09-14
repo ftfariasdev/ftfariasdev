@@ -1,0 +1,4 @@
+# Generated SVGs and README must be byte-identical on every OS, or the build check fails.
+* text=auto eol=lf
+*.woff binary
+*.png binary
