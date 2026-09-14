@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { components } from "../src/components/index.mjs";
 import { optimizeSvg } from "../src/lib/optimize.mjs";
 import { loadProject } from "../src/lib/project.mjs";
+import { renderReadme } from "../src/lib/readme.mjs";
 
 const root = new URL("../", import.meta.url);
 const assetsDir = new URL("assets/", root);
@@ -29,11 +30,13 @@ async function writeAssets(assets) {
 }
 
 if (resolve(process.argv[1] ?? "") === fileURLToPath(import.meta.url)) {
-  const assets = renderAssets();
+  const project = loadProject();
+  const assets = renderAssets(project);
   await writeAssets(assets);
+  await writeFile(new URL("README.md", root), renderReadme(project));
 
   for (const { file, svg } of assets) {
     console.log(`${file.padEnd(32)} ${(Buffer.byteLength(svg) / 1024).toFixed(1).padStart(6)} KB`);
   }
-  console.log(`Built ${assets.length} assets.`);
+  console.log(`Built ${assets.length} assets and README.md.`);
 }
