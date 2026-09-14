@@ -52,7 +52,11 @@ I hold a technical degree in web development from ETEC and I'm working on my bac
 
 ## Off the clock
 
-<p align="center"><a href="https://spotify-github-profile.kittinanx.com/api/view?uid=31ygxzb4eqcg4tqcipfxuxmf75qa&redirect=true"><picture><source media="(prefers-color-scheme: dark)" srcset="https://spotify-github-profile.kittinanx.com/api/view?uid=31ygxzb4eqcg4tqcipfxuxmf75qa&cover_image=true&theme=spotify-embed&show_offline=true&interchange=false&profanity=false&mode=dark&background_color=101B45&bar_color=FFCE5C&bar_color_cover=false"><img alt="What I am listening to on Spotify" src="https://spotify-github-profile.kittinanx.com/api/view?uid=31ygxzb4eqcg4tqcipfxuxmf75qa&cover_image=true&theme=spotify-embed&show_offline=true&interchange=false&profanity=false&mode=light&background_color=EAF1FA&bar_color=B84E08&bar_color_cover=false"></picture></a></p>
+<p align="center">
+  <a href="https://github.com/kittinan/spotify-github-profile">
+    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31ygxzb4eqcg4tqcipfxuxmf75qa&cover_image=true&theme=spotify-embed&show_offline=true&background_color=121212&interchange=false&profanity=false&hide_remaster=false&bar_color=53b14f&bar_color_cover=false&mode=dark">
+  </a>
+</p>
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/vu-meter-dark.svg"><img alt="A level meter built from solar cells, bouncing on the beat" src="assets/vu-meter-light.svg"></picture></p>
 
