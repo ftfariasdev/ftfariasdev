@@ -36,8 +36,8 @@ I hold a technical degree in web development from ETEC and I'm working on my bac
 <p align="center"><a href="https://github.com/ftfariasdev/ftfariasdev.github.io"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-portfolio-dark.svg"><img alt="ftfariasdev.github.io, my portfolio site built with vanilla HTML, CSS and JavaScript on GitHub Pages" src="assets/project-portfolio-light.svg" width="49%"></picture></a> <a href="https://github.com/ftfariasdev/ftfariasdev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-profile-dark.svg"><img alt="ftfariasdev, the repository behind this profile, where a Node.js build renders every animated SVG from design tokens and a GitHub Action refreshes the contribution farm" src="assets/project-profile-light.svg" width="49%"></picture></a></p>
 
 - [SAGA](https://github.com/ftfariasdev/SAGA) — Academic management system, UNASP capstone, team of four
-- [ElixirBotForTelegram](https://github.com/ftfariasdev/ElixirBotForTelegram) — Telegram bot that checks CPFs, College group project, five people
-- [ftfariasdev.github.io](https://github.com/ftfariasdev/ftfariasdev.github.io) — My portfolio site, Vanilla HTML, CSS and JavaScript
+- [ElixirBotForTelegram](https://github.com/ftfariasdev/ElixirBotForTelegram) — Telegram bot that checks CPFs, college group project, five people
+- [ftfariasdev.github.io](https://github.com/ftfariasdev/ftfariasdev.github.io) — My portfolio site, vanilla HTML, CSS and JavaScript
 - [ftfariasdev](https://github.com/ftfariasdev/ftfariasdev) — This profile, built by code, SVGs rendered from design tokens
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-4-dark.svg"><img alt="" src="assets/divider-4-light.svg" width="100%"></picture></p>

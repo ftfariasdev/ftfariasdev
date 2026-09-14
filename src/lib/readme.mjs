@@ -48,7 +48,14 @@ export function renderReadme(project) {
       .concat(`<sub>${stack.alsoShipped.label} ${sentenceList(stack.alsoShipped.items)} on ${stack.alsoShipped.source}.</sub>`)
       .join("  \n"),
     projects: projectGrid(content.projects),
-    projectList: content.projects.map(({ name, url, lines }) => `- [${name}](${url}) — ${lines.join(", ")}`).join("\n"),
+    projectList: content.projects
+      .map(({ name, url, lines }) => {
+        // The second line continues the sentence here, so an ordinary capitalized word is lowered.
+        // Acronyms like UNASP and SVGs keep their case.
+        const continued = /^[A-Z][a-z]/.test(lines[1]) ? lines[1].charAt(0).toLowerCase() + lines[1].slice(1) : lines[1];
+        return `- [${name}](${url}) — ${lines[0]}, ${continued}`;
+      })
+      .join("\n"),
     farm: centered(
       `<picture><source media="(prefers-color-scheme: dark)" srcset="${farm.url}/farm-dark.svg"><img alt="${farm.alt}" src="${farm.url}/farm-light.svg" width="100%"></picture>`,
     ),
